@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html >
+    <head>
+        <meta charset="UTF-8">
+        <title>World Map</title>
+        <link rel="stylesheet" href="assets/css/jasra_globe.css">
+    </head>
+    <body class="globe_body">
+        <!-- The embed element is the element where the globe is hosted
+        You must set the width and height of this element. The globe automatically
+        inherits the size of this element.
+        NOTE: The embed element could be any element of your hosting page
+        and can have whatever id and classes, as long as it has a defined width and height
+        We are using the embed element as an example of hosting the globe
+        -->
+        <div id="embedElement">
+            <!-- 
+            Parent container
+            --->
+
+            <div id="globe_container" class="globe_inherit">
+                <div id="globe_base" class="globe_inherit"></div>
+                <div class="globe_inherit globe_zoom globe_transition_1s">
+                    <div id="globe_backDrop" class="globe_inherit globe_transition_500ms"></div>
+                    <canvas id="globe_canvas" class="globe_inherit globe_transition_500ms"></canvas>
+                </div>
+                <div id="globe_zoomPanel">
+                    <div id="globe_zoomIn" class="globe_transition_1s" ></div>
+                    <div id="globe_zoomOut" class="globe_transition_1s"></div>
+                </div>
+            </div>
+
+        </div>
+        <script type="text/javascript">
+            var ee = document.getElementById("embedElement")
+            ee.clientWidth = document.documentElement.clientWidth
+            ee.clientHeight = document.documentElement.clientHeight
+        </script>
+        <!--
+         Required script files
+        -->
+        <script src="assets/js/jquery-3.2.1.min.js" type="text/javascript"></script>
+        <script src="assets/js/d3.v4.min.js" type="text/javascript"></script>
+        <script src="assets/js/topojson.v3.min.js" type="text/javascript"></script>
+        <script src="assets/js/versor.min.js" type="text/javascript"></script>
+        <script  src="assets/js/jasra_globe.js"></script>
+    </body>
+</html>
+
